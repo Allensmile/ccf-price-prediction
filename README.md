@@ -13,6 +13,9 @@
 
 ```
 .
+├── data
+│   ├── farming.csv(复赛训练数据)
+│   └── product_market.csv(复赛预测数据)
 ├── forecast
 │   ├── GBDT.py
 │   ├── __init__.py
@@ -27,3 +30,14 @@
 ```
 ---
  
+#### 运行方法
+
+1. 在 `Preprocess/Utils.py` 填入`base`文件夹
+2. 运行 `FilePreprocessor.py` 将文件进行分割
+3. 运行 `ImputationPreprocessor.py` 进行缺失值填补
+4. 运行 `FeaturePreprocessor.py` 提取特征
+5. （可选）调节`forecast/GBDT.py`的参数设置
+6. 运行 `forecast/GBDT.py` 使用`GBDT`模型进行预测
+7. 运行 `PlotPreprocessor.py` 查看历史价格走势（蓝线）和预测价格（红线）
+如下：
+![图片](./example.png)
